@@ -28,5 +28,6 @@
 3. 添加STATS_KEYS
 > STATS_KEYS = ['downloader/request_count', 'downloader/response_count','downloader/response_status_count/200', 'item_scraped_count']
 
+
 ### 效果图
 ![监控图片](https://github.com/pibigstar/scrapy-zufang/blob/master/监控.png)
