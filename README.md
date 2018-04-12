@@ -7,7 +7,8 @@
 - redis
 - scrapy-redis
 - flask
-** scrapy不会安装的可参考:[https://blog.csdn.net/junmoxi/article/details/70519598](https://blog.csdn.net/junmoxi/article/details/70519598) **
+
+* scrapy不会安装的可参考:[https://blog.csdn.net/junmoxi/article/details/70519598](https://blog.csdn.net/junmoxi/article/details/70519598) *
 
 ## 使用步骤
 
