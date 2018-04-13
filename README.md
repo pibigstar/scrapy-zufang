@@ -1,4 +1,9 @@
 # 分布式租房爬虫系统
+## 使用技术
+- 分布式处理
+- MongoDB存储
+- 爬虫监控
+- 断点续爬
 
 ## 用到的模块
 - scrapy
@@ -32,3 +37,28 @@
 
 ### 效果图
 ![监控图片](https://github.com/pibigstar/scrapy-zufang/blob/master/监控.png)
+
+
+## 断点续爬
+1. 安装模块：
+- pip install bsddb3
+- pip install scrapy-deltafetch
+- pip install scrapy-magicfields
+
+> 安装bsddb3时如果失败，可以去网站：[https://www.lfd.uci.edu/~gohlke/pythonlibs/](https://www.lfd.uci.edu/~gohlke/pythonlibs/)下载bsddb3的包
+> 然后通过 pip install 包名.whl 安装
+
+2. 导入文件
+> 将scrapy_deltafetch 和 scrapy_magicfields 两个文件夹放入到你的目录下
+
+3. 新增配置
+在scrapy的setting文件中新增配置
+> SPIDER_MIDDLEWARES = {
+>    'zufang.scrapy_deltafetch.middleware.DeltaFetch': 50,
+>    'scrapy_magicfields.middleware.MagicFieldsMiddleware': 51,
+> }
+> DELTAFETCH_ENABLED = True
+> MAGICFIELDS_ENABLED = True
+> MAGIC_FIELDS = {
+>     "url": "scraped from $response:url",
+> }
